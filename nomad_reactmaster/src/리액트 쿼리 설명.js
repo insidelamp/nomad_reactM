@@ -80,3 +80,18 @@ const {isLoading, data} = useQuery("allCoins", fetchCoins)
 
 
 */
+
+/*
+
+const {isLoading, data} = useQuery("allCoins", fetchCoins)
+
+리액트 쿼는 기본적으로 fetcher 함수와 연결시켜서 isLoading 같은 함수가 불렸는지 아닌지를 알려주고 fetchCoins가 실행됨
+fetchCoins 함수가 끝났을때 data에 값을 넣어줘 data에 쉬운방법으로 접근할수있게해줌 
+
+이 외에도 리액트 쿼리에는 캐싱( Caching ) 매커니즘을 가지고있음 
+만약  query 에 공유한 key 값을 react query에 넘겨주었다면  react query 는 Loadng을 다시 보여주지 말라는걸 알게됨 
+
+react query 에는 ReactQueryDevtools 라는 걸 갖고있음
+이 ReactQueryDevtools 에는  캐시에 어떤 query 가있는지 보여주고 결과가 무엇인지도 Data Explorer 로 보여줌
+
+*/
