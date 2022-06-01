@@ -20,6 +20,7 @@ const Coin = styled.li`
   color: ${(props) => props.theme.bgColor};
   border-radius: 15px;
   margin-bottom: 10px;
+  border: 1px solid white;
   a {
     display: flex;
     align-items: center;
@@ -56,6 +57,9 @@ interface ICoin {
   is_active: boolean;
   type: string;
 }
+
+interface ICoinProps {}
+
 function Coins() {
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
 

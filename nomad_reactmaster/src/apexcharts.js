@@ -27,4 +27,5 @@ apexcharts.com -> docs ->react-charts -> options 에서 필요없는 기능을 �
 
 
 
+
 */
