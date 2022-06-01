@@ -37,3 +37,33 @@ export function fetchCoinHistory(coinId: string) {
     `${BASE_URL}/coins/${coinId}/ohlcv/historical?start=${startDate}&end=${endDate}`
   ).then((response) => response.json());
 }
+
+/*
+
+
+export async function fetchCoins()
+{
+    const response = await fetch(`https://api.coinpaprika.com/v1/coins`);
+    const json = await response.json();
+    return json;
+} 
+export async function fetchCoinInfo(CoinId:string) {
+    const infoData = await (await fetch(`https://api.coinpaprika.com/v1/coins/${CoinId}`))
+    .json();
+    return infoData;
+}
+export async function fetchPriceData(CoinId:string) {
+    const priceData = await (await fetch(`https://api.coinpaprika.com/v1/tickers/${CoinId}`))
+    .json()
+    return priceData;
+}
+const endTime = Math.floor(Date.now() / 1000);
+const startTime = endTime - (3600 * 24 * 14);
+export async function  fetchCoinhistory(CoinId : string) {
+    const Coinhistory = await (await fetch(`https://api.coinpaprika.com/v1/coins/${CoinId}/ohlcv/historical?start=${startTime}&end=${endTime}
+    `))
+    .json();
+    return Coinhistory;
+}
+
+*/

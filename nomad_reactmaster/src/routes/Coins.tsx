@@ -67,6 +67,7 @@ function Coins() {
     <Container>
       <Header>
         <Title>코인</Title>
+        <button>Toggle button</button>
       </Header>
       {isLoading ? (
         <Loader>Loading...</Loader>
