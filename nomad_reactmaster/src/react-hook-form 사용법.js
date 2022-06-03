@@ -136,4 +136,23 @@ const { register, handleSubmit, formState } = useForm();
   위와같이 있으면 패스워드1 에 글자수 5글자제한에 메세지로 Your password is too short 라고 보내지게되며 모든조건이 통과시 submit버튼을 눌러 정보를 보낼수있다
 
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>({
+    defaultValues: {
+      email: "@naver.com",
+    },
+  });
+
+  <input
+          {...register("password", { required: "write here", minLength: 5 })}
+          placeholder="Password"
+        />
+        <span>{errors?.password?.message}</span>
+
+  위와 같이 사용시 인풋의 적는값은 password 고 필수사항으로 write here 을 보여주고 최소길이 5자이상으로 잡아주며
+  그냥 제출시 errors가 보여 write here 이 보일수있도록 만든 코드이다 
+
 */
