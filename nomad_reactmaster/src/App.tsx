@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import ToDoList from "./ToDoList";
-import Login from "./Login";
+import ToDoList from "./commponents/ToDoList";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -73,9 +72,6 @@ function App() {
       <Switch>
         <Route path="/">
           <ToDoList />
-        </Route>
-        <Route path="/login">
-          <Login />
         </Route>
       </Switch>
     </BrowserRouter>
