@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { useSetRecoilState } from "recoil";
-import { toDoState } from "../atoms";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { IToDo, toDoState } from "../atoms";
+import { categoryState } from "../atoms";
 
 interface IForm {
   toDo: string;
@@ -8,18 +9,21 @@ interface IForm {
 
 function CreateToDo() {
   const setToDos = useSetRecoilState(toDoState);
+  const category = useRecoilValue(categoryState);
   const { register, handleSubmit, setValue } = useForm<IForm>();
-  const handleVaild = ({ toDo }: IForm) => {
+  const handleValid = ({ toDo }: IForm) => {
     setToDos((oldToDos) => [
-      { text: toDo, id: Date.now(), category: "TO_DO" },
+      { text: toDo, id: Date.now(), category },
       ...oldToDos,
     ]);
     setValue("toDo", "");
   };
   return (
-    <form onSubmit={handleSubmit(handleVaild)}>
+    <form onSubmit={handleSubmit(handleValid)}>
       <input
-        {...register("toDo", { required: "Please write a To Do" })}
+        {...register("toDo", {
+          required: "Please write a To Do",
+        })}
         placeholder="Write a to do"
       />
       <button>Add</button>
